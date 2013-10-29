@@ -1,0 +1,25 @@
+/* Structure */
+article {
+    margin-left: 10%;
+    text-align: center;
+    width: 80%;
+}
+
+#logo { width: 100%; }
+
+/* Style */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    background-color: #333;
+    color: #DDD;
+}
+h1 {
+    color: #DDD;
+    font-weight: 800;
+}
+
+h2 {
+    color: #DDD;
+    font-weight: 600;
+}
