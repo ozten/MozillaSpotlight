@@ -5,6 +5,15 @@ article {
     width: 80%;
 }
 
+@media (max-width: 325px) {
+  body {
+    background-color: red;
+  }
+  iframe {
+    margin-left: -10%;
+  }
+}
+
 @media (min-width: 625px) {
     article {
         width: 500px;
