@@ -15,8 +15,10 @@ article {
 
 #logo { width: 100%; }
 
+nav { margin-top: 100px; }
+
 /* Style */
-body {
+body, a {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
     background-color: #333;
@@ -30,4 +32,8 @@ h1 {
 h2 {
     color: #DDD;
     font-weight: 600;
+}
+
+nav ul li {
+    list-style: none;
 }
