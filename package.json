@@ -1,0 +1,30 @@
+{
+  "name": "MozillaSpotlight",
+  "version": "0.0.0",
+  "description": "Mozilla Spotlight highlights Mozillians in random order, one per day.",
+  "main": "bin/server.js",
+  "bin": {
+    "MozillaSpotlight": "invite.js"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "dependencies": {
+    "nodemailer": "0.5.3",
+    "nunjucks": "1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node bin/server.js",
+    "test": "echo Hah! Yay, right"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ozten/MozillaSpotlight.git"
+  },
+  "author": "Austin King",
+  "license": "BSD",
+  "bugs": {
+    "url": "https://github.com/ozten/MozillaSpotlight/issues"
+  }
+}

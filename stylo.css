@@ -27,6 +27,11 @@ article {
 nav { margin-top: 100px; }
 nav ul li { float: left; margin-right: 15px;}
 
+.info {
+    margin-top: 2em;
+    text-align: left;
+}
+
 /* Style */
 body, a {
     font-family: 'Open Sans', sans-serif;
@@ -51,4 +56,19 @@ nav ul li {
 nav ul li a {
     font-weight: 600;
     color: #AAA;
+}
+
+.info {
+  padding: 1em;
+}
+
+.info, .info h1, .info h2 {
+    background-color: #FFF;
+    color: #666;
+}
+
+.info a {
+    background-color: #FFF;
+    color: #009;
+    font-weight: 600;
 }

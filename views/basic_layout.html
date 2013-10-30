@@ -2,29 +2,27 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Mozilla Community Spotlight</title>
+<title>{% block title %}Mozilla Community Spotlight{% endblock %}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:600,300' rel='stylesheet' type='text/css'>
+<base href="http://127.0.0.1:8001/" />
 <link href="stylo.css" media="screen, projection" rel="stylesheet" type="text/css" />
 <link rel="shortcut icon" type="image/ico" href="favicon.ico">
 <link rel="alternate" type="application/rss+xml" title="Mozilla Community Spotlight" href="http://www.mozillaspotlight.com/rss.xml" />
 </head>
 <body>
 <article>
-<!-- TODO A11y image text replacement -->
-<!--h1>Mozillians Spotlight</h1 -->
-<img src="logo.jpg" id="logo" />
-<p>Spotlighting a random Mozillan, one per day.</p>
-<h2>Austin King - Seattle, WA, USA</h2>
+    {% block masthead %}
+    <!-- TODO A11y image text replacement -->
+    <!--h1>Mozillians Spotlight</h1 -->
+    <img src="logo.jpg" id="logo" />
+    <p>Spotlighting a random Mozillan, one per day.</p>
+    {% endblock %}
 
-<a href="http://www.youtube.com/watch?v=gSEzGDzZ1dY">Watch</a>
+    {% block content %}
 
-<a href="http://www.youtube.com/watch?v=CBhop1NQ8lg">Watch 2</a>
-
-<iframe width="560" height="315" src="//www.youtube.com/embed/gSEzGDzZ1dY" frameborder="0" allowfullscreen></iframe>
-
-<iframe width="420" height="315" src="//www.youtube.com/embed/CBhop1NQ8lg" frameborder="0" allowfullscreen></iframe>
-
+    {% endblock %}
+    {% block footer %}
 <nav>
 <ul>
     <li><a href="archives.html">Archives</a></li>
@@ -32,6 +30,7 @@
     <li><a href="mailto:help@mozillaspotlight.com">Contact US</a></li>
 </ul>
 </nav>
+    {% endblock %}
 </article>
 
 </body>
