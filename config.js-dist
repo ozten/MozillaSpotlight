@@ -1,0 +1,9 @@
+// NodeJS web server
+exports.bind_address = '0.0.0.0';
+exports.port = 8002;
+exports.audience = 'http://www.mozillaspotlight.com';
+
+// Email
+exports.hostname = "smtp.mailgun.org";
+exports.login = "user@example.com";
+exports.password = "password";

@@ -12,6 +12,7 @@
 </head>
 <body>
 <article>
+    {% block authui %}{% endblock %}
     {% block masthead %}
     <!-- TODO A11y image text replacement -->
     <!--h1>Mozillians Spotlight</h1 -->
@@ -32,6 +33,7 @@
 </nav>
     {% endblock %}
 </article>
-
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+{% block authjs %}{% endblock %}
 </body>
 </html>

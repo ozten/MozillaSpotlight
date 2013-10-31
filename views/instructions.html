@@ -1,4 +1,7 @@
-alice@example.com <a href="signout">Log out</a>
+{% extends "auth_layout.html" %}
+{% block content %}
+
+<div class="info">
 <h1>Instructions</h1>
 <p>Sharing your story on Mozilla Spotlight is easy.</p>
 <ol>
@@ -17,3 +20,14 @@ alice@example.com <a href="signout">Log out</a>
 </form>
 
 <p>You have 2 weeks until your spotlight, so don't wait. Get started now!</p>
+</div>
+{% endblock %}
+{% block userinfo %}
+var currentUser = {{user}};
+{% endblock %}
+
+{% block onready %}
+if (! currentUser) {
+    window.location = baseUrl + '/invited';
+}
+{% endblock %}

@@ -10,8 +10,12 @@
     "doc": "docs"
   },
   "dependencies": {
+    "browser-id-verify": "0.0.2",
     "nodemailer": "0.5.3",
-    "nunjucks": "1.0.0"
+    "node-uuid": "1.4.1",
+    "nunjucks": "1.0.0",
+    "sessions": "0.0.2-7",
+    "qs": "0.6.5"
   },
   "devDependencies": {},
   "scripts": {
