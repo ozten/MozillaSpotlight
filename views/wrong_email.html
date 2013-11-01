@@ -1,0 +1,19 @@
+{% extends "auth_layout.html" %}
+{% block content %}
+
+<div class="info">
+<h1>Error: Wrong Email</h1>
+<p>You've signed in with <span class="current-user"></span>, but we didn't invite anyone
+    at that email address. Please logout and sign in again.</p>
+<p>Be sure to sign in with the email address we emailed you at.</p>
+</div>
+{% endblock %}
+{% block userinfo %}
+var currentUser = {{user}};
+{% endblock %}
+
+{% block onready %}
+if (! currentUser) {
+    window.location = baseUrl + '/invited';
+}
+{% endblock %}

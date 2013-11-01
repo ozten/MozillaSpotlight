@@ -13,10 +13,10 @@
 </ol>
 
 <h2>Video Details</h2>
-<form>
-    <label>Video Embed Code</label>
-    <textarea></textarea>
-    <button>Save Video</button>
+<form action="{{baseUrl}}/spotlight" method="POST">
+    <label for="embed">Video Embed Code</label>
+    <textarea id="embed" name="embed">{% if workflow.embed %}{{workflow.embed }}{% endif %}</textarea>
+    <button name="submit">Save Video</button>
 </form>
 
 <p>You have 2 weeks until your spotlight, so don't wait. Get started now!</p>

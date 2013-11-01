@@ -1,23 +1,31 @@
 #!/usr/local/bin/node
-var mailer = require('nodemailer'),
-    config = require('../config');
 
-console.log(config.login, config.password);
+var mailer = require('nodemailer');
+
+var config = require('../config');
+var db = require('../lib/db');
+
+if (3 !== process.argv.length) {
+    console.log('USAGE:', process.argv[1], 'EMAIL_ADDRESS');
+    process.exit(1);
+}
+var email = process.argv[2];
 
 // create reusable transport method (opens pool of SMTP connections)
 var smtpTransport = mailer.createTransport("SMTP",{
-    host: config.hostname,
+    host: config.smtp_hostname,
+    port: config.smtp_port,
     debug: true,
     auth: {
-	user: config.login,
-	pass: config.password
+    	user: config.smtp_login,
+    	pass: config.smtp_password
     }
 });
 
 // setup e-mail data with unicode symbols
 var mailOptions = {
     from: "Spotlighters <team@mozillaspotlight.com>",
-    to: "shout@ozten.com",
+    to: email,
     subject: "You're in the Mozilla Spotlight!",
     text: "Hello!\n" +
 "\n" +
@@ -36,16 +44,31 @@ var mailOptions = {
 "Cheers,\n" +
 "\n" +
 "The Spotlight Team\n"
-};
+}
+
+console.log('Sending email', mailOptions);
 
 // send mail with defined transport object
 smtpTransport.sendMail(mailOptions, function(error, response){
+    console.log('smtpTransport callback', error, response);
+    smtpTransport.close();
     if(error){
-	console.log(error);
+	   console.log(error);
     }else{
-	console.log("Message sent: " + response.message);
+        console.log('message sent, saving workflow');
+        var workflow = {
+            email: email,
+            // created is also the invited time
+            created: new Date().getTime()
+        };
+	    db.saveSpotlightWorkflow(email, workflow, function(err) {
+            db.close();
+            if (err) {
+                console.error(err);
+                throw new Error(err);
+            }
+            console.log("Message sent to " + email);
+            process.exit(0);
+        });
     }
-
-    // if you don't want to use this transport object anymore, uncomment following line
-    smtpTransport.close(); // shut down the connection pool, no more messages
 });

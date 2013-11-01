@@ -1,0 +1,21 @@
+{% extends "auth_layout.html" %}
+{% block content %}
+
+<div class="info">
+<h1>Thanks</h1>
+<p>We've saved your video and will schedule it to appear on the homepage.</p>
+<h2>Preview of your Video</h2>
+<p>{{ workflow.embed | safe }}</p>
+<p>Problem? You can <a href="{{baseUrl}}/instructions">Edit your HTML Embed Code</a> and try again.</p>
+</div>
+{% endblock %}
+
+{% block userinfo %}
+var currentUser = {{user}};
+{% endblock %}
+
+{% block onready %}
+if (! currentUser) {
+    window.location = baseUrl + '/invited';
+}
+{% endblock %}
