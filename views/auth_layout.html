@@ -1,9 +1,9 @@
 {% extends "basic_layout.html" %}
 {% block authui %}
-<nav>
+<nav class="auth">
     <ul>
         <li><a href="" id="signin"><img src="email_sign_in_blue.png" alt="Sign In with Email" /></a></li>
-        <li><a href="" id="signout">Logout</a></li>
+        <li>Welcome back <span class="current-user"></span> <a href="" id="signout">Logout</a></li>
     </ul>
 </nav>
 {% endblock %}
@@ -19,6 +19,11 @@ if (signinLink) {
   signinLink.onclick = function(e) { e.preventDefault(); navigator.id.request(); };
 }
 
+var signinLink2 = document.getElementById('signin2');
+if (signinLink2) {
+  signinLink2.onclick = function(e) { e.preventDefault(); navigator.id.request(); };
+}
+
 var signoutLink = document.getElementById('signout');
 if (signoutLink) {
   signoutLink.onclick = function(e) {e.preventDefault(); navigator.id.logout(); };
@@ -28,6 +33,7 @@ if (signoutLink) {
 
 var baseUrl = 'http://127.0.0.1:8002';
 
+$('.current-user').text(currentUser);
 
 navigator.id.watch({
   loggedInUser: currentUser,
@@ -49,6 +55,7 @@ navigator.id.watch({
   },
   onready: function() {
     if (!! currentUser) {
+        $('.current-user').text(currentUser);
         $("#signout").show();
         $("#signin").hide();
     } else {

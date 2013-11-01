@@ -32,6 +32,12 @@ nav ul li { float: left; margin-right: 15px;}
     text-align: left;
 }
 
+nav.auth {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
 /* Style */
 body, a {
     font-family: 'Open Sans', sans-serif;
@@ -48,6 +54,8 @@ h2 {
     color: #DDD;
     font-weight: 600;
 }
+
+b { font-weight: 600; }
 
 nav ul li {
     list-style: none;

@@ -8,6 +8,7 @@ var Sessions = require("sessions");
 var verify = require('browser-id-verify');
 
 var config = require('../config');
+var dbServer = require('../lib/db_server');
 
 nunjucks.configure(path.join(__dirname, '../views'));
 
@@ -112,6 +113,7 @@ function authLogout(req, res) {
 }
 
 server.listen(config.port, config.bind_address, function() {
+    console.log('Database server running on ' + dbServer.port);
     console.log('Public url is ' + config.audience);
     console.log('Listening for traffic on http://' + config.bind_address + ':' + config.port);
 });

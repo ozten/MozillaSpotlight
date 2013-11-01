@@ -17,7 +17,7 @@ var smtpTransport = mailer.createTransport("SMTP",{
 // setup e-mail data with unicode symbols
 var mailOptions = {
     from: "Spotlighters <team@mozillaspotlight.com>",
-    to: "kbrosnan+mz@gmail.com",
+    to: "shout@ozten.com",
     subject: "You're in the Mozilla Spotlight!",
     text: "Hello!\n" +
 "\n" +
@@ -36,7 +36,7 @@ var mailOptions = {
 "Cheers,\n" +
 "\n" +
 "The Spotlight Team\n"
-}
+};
 
 // send mail with defined transport object
 smtpTransport.sendMail(mailOptions, function(error, response){
