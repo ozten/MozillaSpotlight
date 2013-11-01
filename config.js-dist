@@ -4,6 +4,10 @@ exports.port = 8002;
 exports.audience = 'http://www.mozillaspotlight.com';
 
 // Email
-exports.hostname = "smtp.mailgun.org";
-exports.login = "user@example.com";
-exports.password = "password";
+exports.smtp_hostname = "smtp.mailgun.org";
+exports.smtp_port = 587;
+exports.smtp_login = "user@example.com";
+exports.smtp_password = "password";
+
+// Database
+exports.db_port = 8003;
